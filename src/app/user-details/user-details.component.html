@@ -1,0 +1,61 @@
+<div class="bg-body-secondary text-center py-5 rounded-2">
+    <h1 class="display-6 fw-bold">
+        User Details
+    </h1>
+
+</div>
+<div class="row mt-5">
+    <div class="col-6">
+        <app-user-details-form ></app-user-details-form>
+    </div>
+    <div class="col-6">
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between alien-items-start mb-2 border px-4 py-3 rounded-3"
+                *ngFor="let pd of users">
+                <div class="flex-grow-1 mouse-hover">
+                    <div class="fw-bold">{{pd.id}}</div>
+                    <div class="fw-bold">{{pd.name}}</div>
+                    <div class="fw-bold">{{pd.email}}</div>
+                    <div class="fw-bold">{{pd.phone}}</div>
+                </div>
+                <span class="text-secondary" (click)="Delete(pd)">
+                    <i class="fa-solid fa-trash-can fa-lg btn btn-primary:hover"></i>
+                </span>
+                <span class="text-secondary" (click)="popData(pd)">
+                    <i class="fa-solid fa-pencil fa-lg btn btn-primary:hover"></i>
+                </span>
+
+            </li>
+        </ul>
+
+        <!-- <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table> -->
+    </div>
+</div>

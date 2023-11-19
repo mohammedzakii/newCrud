@@ -1,0 +1,28 @@
+<form #myForm="ngForm" (submit)="submitForm(myForm)" [class.submitted]="service.formSumbited" novalidate>
+    <!-- <div class="mb-3">
+        <label>User Name</label>
+        <input class="from-control from-control-lg" placeholder="name" #name="ngModel" name="name"
+            [(ngModel)]="UserData.name">
+
+    </div> -->
+    <input type="hidden" name="id" [value]="service.formData.id">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">User Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  [(ngModel)]="service.formData.name" #name="ngModel" name="name" required>
+        
+        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail2" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"  [(ngModel)]="service.formData.email" #email="ngModel" name="email" required>
+        <span style="color: red;"></span>
+        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail3" class="form-label">Phone</label>
+        <input type="text" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp"  [(ngModel)]="service.formData.phone" #phone="ngModel" name="phone" required maxlength="11" minlength="11">
+        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
